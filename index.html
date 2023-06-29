@@ -22,7 +22,7 @@
             line-height: 30px;
         }
 
-        .cricle {
+        .circle {
             background-color: white;
             border-radius: 50%;
             color: black;
@@ -35,16 +35,17 @@
     <button>Utwórz element</button>
     <script>
         const btn = document.querySelector("button");
-        let number = 1
+        let number = 0
         function addBox() {
             const div = document.createElement("div");
             document.body.appendChild(div)
             div.textContent = number
+            number++
             if (number % 5 === 0) {
-                div.classList('.circle')
+                div.classList.add('circle')
             }
             else {
-                number++
+                div.classList.remove('circle')
             }
         }
         btn.addEventListener("click", addBox)
